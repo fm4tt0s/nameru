@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 #
 # author    : Felipe Mattos
-# email     : Felipe.Mattos@T-Mobile.com
-# date      : 12/14/2022
+# date      : 12/13/2022
 # app       : whatever
 # app layer : whatever
 # version   : 0.1
@@ -64,7 +63,7 @@ makeID() {
     [ "${_makeID_case}" = "u" ] && _makeID_case="[:upper:]"
     [ "${_makeID_case}" = "c" ] && _makeID_case="[:lower:][:upper:]"
     # let it roll
-    _makeID_idrand=$(LC_ALL=C tr -dc \""${_makeID_case}[0-9]"\" < /dev/urandom | fold -w "${_makeID_bytes}" | head -n 1)
+    _makeID_idrand=$(LC_ALL=C tr -dc \""${_makeID_case}[:digit:]"\" < /dev/urandom | tr -d "[:punct:]" | fold -w "${_makeID_bytes}" | head -n 1)
     # return
     echo "${_makeID_idrand}"
 }
