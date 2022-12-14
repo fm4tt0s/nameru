@@ -60,9 +60,9 @@ makeID() {
     # get the last char - I hate POSIX so much - to know which case to use
     _makeID_case=$(echo "${1}" | tr -d -c '[:lower:]')
     # build the tr params
-    [ "${_makeID_case}" = "l" ] && _makeID_case="a-z"
-    [ "${_makeID_case}" = "u" ] && _makeID_case="A-Z"
-    [ "${_makeID_case}" = "c" ] && _makeID_case="a-zA-Z"
+    [ "${_makeID_case}" = "l" ] && _makeID_case="[:lower:]"
+    [ "${_makeID_case}" = "u" ] && _makeID_case="[:upper:]"
+    [ "${_makeID_case}" = "c" ] && _makeID_case="[:lower:][:upper:]"
     # let it roll
     _makeID_idrand=$(tr -dc "${_makeID_case}0-9" < /dev/urandom | fold -w "${_makeID_bytes}" | head -n 1)
     # return
