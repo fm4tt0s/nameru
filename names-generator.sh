@@ -64,7 +64,7 @@ makeID() {
     [ "${_makeID_case}" = "u" ] && _makeID_case="[:upper:]"
     [ "${_makeID_case}" = "c" ] && _makeID_case="[:lower:][:upper:]"
     # let it roll
-    _makeID_idrand=$(tr -dc "${_makeID_case}0-9" < /dev/urandom | fold -w "${_makeID_bytes}" | head -n 1)
+    _makeID_idrand=$(tr -dc \""${_makeID_case}0-9"\" < /dev/urandom | fold -w "${_makeID_bytes}" | head -n 1)
     # return
     echo "${_makeID_idrand}"
 }
