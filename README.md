@@ -2,7 +2,7 @@
  create random IDs or LOTR names - how cool is a jolly-sauron? it started as a silly need to differentiate some application cnfigs on a dashboard; I was not happy to see crazy uuidgens on the screen. so they were 'tolkienized'.
 
 # remarks
- not much original. shameless based on d[docker names-genarator package](https://github.com/docker/docker-ce/blob/master/components/engine/pkg/namesgenerator/names-generator.go) - but with bilbo :)
+ not much original. shameless based on [docker names-genarator package](https://github.com/docker/docker-ce/blob/master/components/engine/pkg/namesgenerator/names-generator.go) - but with bilbo :)
 
 # usage
 ```
